@@ -1,35 +1,34 @@
 <template>
-  <div>
-    <Navbar/>
-    <HeroSection/>
-    <section id="intro">
+  <div id="home">
+    <HeroSection class="pv-20"/>
+    <section id="intro" class="pv-20">
       <h2>Bye Bye boring tabs, hello Subtle Tab!</h2>
       <p class="center font-large">
-        Subtle tab, a new tab chrome extension, gives rejoicing experience to relieve stress
-        with eye soothing wallpapers,
-        keeps you updated about time and weather, provides you widgets like notes and to-do to better manage your daily
-        tasks
+        Subtle tab, a new tab utility gives rejoicing experience to relieve stress
+        with inspirational wallpapers, keeps you updated about time and weather and lets you create notes.
       </p>
     </section>
-    <FeatureWrapper/>
+    <FeatureWrapper class="pv-20"/>
     <Feedback/>
-    <Footer/>
   </div>
 </template>
 <script>
   import FeatureWrapper from './FeatureWrapper'
   import HeroSection from './HeroSection'
   import Feedback from './Feedback'
-  import Navbar from './Navbar'
-  import Footer from './Footer'
 
   export default {
     components: {
-      Navbar,
       FeatureWrapper,
       HeroSection,
-      Feedback,
-      Footer
+      Feedback
     }
   }
 </script>
+<style>
+
+  #intro p {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+</style>

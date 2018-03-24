@@ -61,7 +61,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         safe: true
       }
     }),
-    // generate dist index.html with correct asset hash for caching.
+    // generate html index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
@@ -112,9 +112,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     new SWPrecacheWebpackPlugin({
       cacheId: 'vue-subtle',
       filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css,jpg,png,webp}'],
+      staticFileGlobs: ['html/**/*.{js,html,css,jpg,png,webp}'],
       minify: true,
-      stripPrefix: 'dist/'
+      stripPrefix: 'html/'
     })
   ]
 })

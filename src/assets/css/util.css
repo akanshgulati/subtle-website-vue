@@ -30,6 +30,11 @@
   padding-bottom: 20px;
 }
 
+.pv-30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .mar-0 {
   margin: 0 !important;
 }
@@ -97,4 +102,102 @@
 
 .inline-block {
   display: inline-block;
+}
+.v-enter-active {
+  transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.v-leave-active {
+  transition: all .30s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
+.ph-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ph-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ph-30 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.pv-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pv-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mar-0 {
+  margin: 0 !important;
+}
+.bold{
+  font-weight: bold;
+}
+.flex {
+  display: flex !important;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-justify-space-around {
+  justify-content: space-around;
+}
+.flex-justify-space-between {
+  justify-content: space-between;
+}
+.flex-justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-flow-column {
+  flex-flow: column;
+}
+
+.lh-1 {
+  line-height: 1
+}
+
+.font-small {
+  font-size: 0.875rem;
+}
+
+.font-large {
+  font-size: 1.2rem;
+}
+
+.font-xlarge {
+  font-size: 1.5rem;
+}
+
+.font-xxlarge {
+  font-size: 2rem;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+h4 {
+  font-size: 2rem;
 }

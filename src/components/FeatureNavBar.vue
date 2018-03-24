@@ -1,32 +1,32 @@
 <template>
   <section id="feature-navbar">
     <ul class="flex flex-center flex-justify-center center">
-      <li @click="scrollTo('wallpaper')" :class="{active: activeTab === 'wallpaper'}">
+      <li @click="scrollTo('wallpaper')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'wallpaper'}">
         <svg viewBox="0 0 21 21">
           <use xlink:href="#icon-wallpaper"></use>
         </svg>
         <p>Wallpapers</p>
       </li>
-      <li @click="scrollTo('notes')" :class="{active: activeTab === 'notes'}">
-        <svg viewBox="0 0 58.27 58.27">
+      <li @click="scrollTo('notes')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'notes'}">
+        <svg viewBox="0 0 58.27 58.27" class="fill">
           <use xlink:href="#icon-notes"></use>
         </svg>
         <p>Notes</p>
       </li>
-      <li @click="scrollTo('weather')" :class="{active: activeTab === 'weather'}">
+      <li @click="scrollTo('weather')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'weather'}">
         <svg viewBox="0 0 21 21">
           <use xlink:href="#icon-weather"></use>
         </svg>
         <p>Weather</p>
       </li>
-      <li @click="scrollTo('dateTime')" :class="{active: activeTab === 'dateTime'}">
+      <li @click="scrollTo('dateTime')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'dateTime'}">
         <svg viewBox="0 0 21 21">
           <use xlink:href="#icon-clock"></use>
         </svg>
         <p>Day & Time</p>
       </li>
-      <li @click="scrollTo('customize')" :class="{active: activeTab === 'customize'}">
-        <svg viewBox="0 0 100 100">
+      <li @click="scrollTo('customize')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'customize'}">
+        <svg viewBox="0 0 100 100" class="fill">
           <use xlink:href="#icon-customize"></use>
         </svg>
         <p>Customize</p>
@@ -120,19 +120,22 @@
 <style scoped>
   #feature-navbar {
     padding: 0;
-    top: 0;
+    top: 64px;
     position: sticky;
     background: white;
     box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   }
   svg {
     margin-right: 0.5rem;
-    margin-top: 1rem;
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     fill: none;
     stroke: #666;
     transition: all 0.2s ease-in;
+  }
+  svg.fill {
+    fill: #666;
+    stroke: none;
   }
   ul li{
     margin: 0 0.5rem;
@@ -141,6 +144,7 @@
     transition: all 0.2s ease-in;
     cursor: pointer;
     max-width: 200px;
+    padding: 1rem 0 0.5rem;
   }
 
   ul li:hover, ul li.active {
@@ -150,9 +154,13 @@
   ul li:hover svg, ul li.active svg {
     stroke: rgb(49, 153, 230);
   }
+  ul li:hover svg.fill, ul li.active svg.fill {
+    fill: rgb(49, 153, 230);
+    stroke: none;
+  }
   ul li p {
     transition: all 0.2s ease-in;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     margin-top: 0;
   }
   ul li:hover p, ul li.active p {

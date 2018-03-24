@@ -1,31 +1,33 @@
 <template>
-  <footer class="footer-container flex flex-justify-space-between font-small">
-      <div>
-        <p class="footer-copyright">@2018 Subtle Tab. All rights reserved.</p>
-        <p class="footer-links">
-          <a href="mailto: akanshgulati@gmail.com" class="pr-5">Contact Us</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj1M9SYtPXzqM1C0KN8DlJio6vGSfZnOWWUVDXArMMSo-GNA/viewform"
-             target="_blank" class="ph-5">Feedback</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj1M9SYtPXzqM1C0KN8DlJio6vGSfZnOWWUVDXArMMSo-GNA/viewform"
-             target="_blank" class="ph-5">Feedback</a>
-        </p>
-      </div>
-      <div class="flex flex-center">
-          <p class="mar-0">Follow us on:</p>
-          <ul class="ml-10">
-            <li class="inline-block mr-10">
-              <a href="#facebook">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  <footer
+    class="footer-container flex flex-justify-space-between font-small"
+    v-if="!hideOn || hideOn.indexOf(currentRoute) === -1">
+    <div>
+      <p class="footer-copyright">@2018 Subtle Tab. All rights reserved.</p>
+      <p class="footer-links">
+        <a href="mailto: contact@subtletab.com" class="pr-5">Contact Us</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj1M9SYtPXzqM1C0KN8DlJio6vGSfZnOWWUVDXArMMSo-GNA/viewform"
+           target="_blank" class="ph-5">Feedback</a>
+        <router-link to="privacy" class="ph-5">Privacy Policy</router-link>
+      </p>
+    </div>
+
+    <div class="flex flex-center">
+      <p class="mar-0">Follow us on:</p>
+      <ul class="ml-10">
+        <li class="inline-block mr-10">
+          <a href="https://facebook.com/subtletab">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 455.73 455.73" style="enable-background:new 0 0 455.73 455.73;" xml:space="preserve">
 <path style="fill:#ffffff" d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475
 	h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"/>
 
 </svg>
-              </a>
-            </li>
-            <li class="inline-block">
-              <a href="#twitter">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          </a>
+        </li>
+        <li class="inline-block">
+          <a href="https://twitter.com/subtletab">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 410.155 410.155" style="enable-background:new 0 0 410.155 410.155;" xml:space="preserve">
 <path style="fill:#fff;" d="M403.632,74.18c-9.113,4.041-18.573,7.229-28.28,9.537c10.696-10.164,18.738-22.877,23.275-37.067
 	l0,0c1.295-4.051-3.105-7.554-6.763-5.385l0,0c-13.504,8.01-28.05,14.019-43.235,17.862c-0.881,0.223-1.79,0.336-2.702,0.336
@@ -41,14 +43,26 @@
 	c10.383-27.737,15.871-57.333,15.871-85.589v-1.346c-0.001-4.537,2.051-8.806,5.631-11.712c13.585-11.03,25.415-24.014,35.16-38.591
 	l0,0C411.924,77.126,407.866,72.302,403.632,74.18L403.632,74.18z"/>
                 </svg>
-              </a>
-            </li>
-          </ul>
-      </div>
+          </a>
+        </li>
+      </ul>
+    </div>
   </footer>
 </template>
 <script>
-  export default {}
+  export default {
+    props :{
+      hideOn: {
+        type: Array | Boolean,
+        default: false
+      }
+    },
+    computed: {
+      currentRoute() {
+        return this.$route.name
+      }
+    }
+  }
 </script>
 <style scoped>
   footer {
@@ -70,6 +84,7 @@
   .footer-container a:active, .footer-container a:link, .footer-container a:visited {
     color: #fff;
   }
+
   svg {
     width: 1rem;
     height: 1rem;

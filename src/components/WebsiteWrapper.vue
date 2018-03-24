@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Navbar/>
+    <Navbar sticky="true" :show-buttons="['home']"/>
     <router-view></router-view>
-    <Footer/>
+    <Footer :hide-on="['uninstall']"/>
   </div>
 </template>
 <script>
@@ -19,29 +19,19 @@
 <style>
   @import '../assets/css/util.css';
 
-  .icon--chrome {
-    width: 32px;
-    height: 32px;
-    margin-right: 0.5rem;
-  }
-
-
-
-  .verify-section {
-    background: #f5f5f5;
-    height: calc(100vh - 130px);
-  }
-
-  #auth-code {
-    display: block;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    color: green;
-    width: 850px;
+  #home section h2, section#privacy h2 {
     text-align: center;
-    background: white;
+    font-size: 36px;
+    line-height: 1.4em;
+  }
+  section h3 {
+    font-size: 2rem;
+    line-height: 1.1;
   }
 
+  section.full-width {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
 </style>

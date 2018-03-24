@@ -1,38 +1,51 @@
 <template>
-  <nav>
-    <div class="nav-wrapper ph-30">
-      <div href="#" class="brand-logo flex flex-center">
+    <nav class="nav-wrapper ph-30" :class="{sticky: sticky}">
+      <router-link to='/' class="brand-logo flex flex-center">
         <img src="../assets/images/subtletab.png" alt="Logo" class="brand-logo-img">
         <span class="font-normal">Subtle tab</span>
-      </div>
-      <ul id="nav-mobile" class="right hide-on-med-and-down flex flex-center">
-        <!--<li><a href="#intro" class="font-small">About</a></li>
-        <li><a class="font-small">FAQ</a></li>-->
+      </router-link>
+      <ul id="nav-mobile"
+          class="right hide-on-med-and-down flex flex-center"
+          v-if="showButtons && showButtons.indexOf(currentRoute) > -1">
         <li class="flex flex-center">
-          <a class="nav-button" href="">
+          <a class="nav-button" href="https://goo.gl/LXE9fK">
             <span class="font-xsmall">Download for</span><br/>
             <span>Chrome</span>
           </a>
         </li>
         <li class="flex flex-center">
-          <a class="nav-button border-left" href="">
+          <a class="nav-button border-left" href="https://goo.gl/SiGMxu">
             <span class="font-xsmall">Download for</span><br/>
             <span>Firefox</span>
           </a>
         </li>
       </ul>
-    </div>
-  </nav>
+    </nav>
 </template>
 <script>
-  export default {}
+  export default {
+    props: {
+      sticky: {
+        type: String,
+        default: 'false'
+      },
+      showButtons: {
+        type: Array
+      }
+    },
+    computed: {
+      currentRoute(){
+        return this.$route.name;
+      }
+    }
+  }
 </script>
 <style scoped>
   nav {
     background: rgb(255, 255, 255);
     color: #666 !important;
     user-select: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   }
 
   nav a {
@@ -42,7 +55,6 @@
   nav .brand-logo {
     color: #000 !important;
     font-size: 1.5rem;
-    height: 100%;
   }
 
   nav .brand-logo-img {
@@ -52,6 +64,7 @@
 
   nav ul a {
     color: #666 !important;
+    padding: 16px 15px;
   }
 
   nav ul a:hover {
@@ -72,5 +85,10 @@
 
   #nav-mobile li {
     height: 64px
+  }
+  .sticky{
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
 </style>

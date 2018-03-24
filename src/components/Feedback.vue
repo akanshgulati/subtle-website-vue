@@ -1,7 +1,7 @@
 <template>
   <section class="rating-section pv-10 center">
     <h4>Enjoying Subtle Tab?</h4>
-    <p>Rate us on <a>Chrome</a> | <a>Firefox</a></p>
+    <p>Rate us on <a href="https://chrome.google.com/webstore/detail/subtle-tab/ngigalmiikbffkcabedaikboeodibhga/reviews">Chrome</a> | <a href="https://addons.mozilla.org/en-US/firefox/addon/subtletab/reviews/">Firefox</a></p>
     <p>
       <svg v-for="i in 5" :key="i" version="1.1" x="0px" y="0px" viewBox="0 0 53.867 53.867"
            style="enable-background:new 0 0 53.867 53.867;" class="ml-5">
