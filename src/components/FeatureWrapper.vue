@@ -3,6 +3,7 @@
     <FeatureNavbar/>
     <Feature
       v-for="(feature, key, $index) in features"
+      :key="$index"
       :desc="feature.desc"
       :heading="feature.heading"
       :img="feature.img"

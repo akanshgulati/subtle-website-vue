@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-router.afterEach((to, from, next) => {
+router.afterEach(() => {
   window.scroll({
     top: 0,
     left: 0,
     behaviour: 'smooth'
   })
-  next()
 })
 
 Vue.config.productionTip = false
