@@ -5,14 +5,6 @@
     </div>
     <div class="content">
       <h1>Get personalized experience on every new tab</h1>
-      <!--<button class="plugin-button flex flex-center">
-            <span class="chrome-plugin-button flex flex-center" style="display: none !important;">
-                <img src="../assets/chrome-store-icon.png" alt="chrome icon" class="icon&#45;&#45;plugin"> Get Subtle Tab for Chrome
-            </span>
-        <span class="firefox-plugin-button flex flex-center" style="display: none !important">
-                <img src="../assets/firefox-store-icon.png" alt="firefox icon" class="icon&#45;&#45;plugin"> Get Subtle Tab for Firefox
-            </span>
-      </button>-->
       <AddToButton/>
     </div>
   </section>
