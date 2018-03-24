@@ -66,7 +66,7 @@
           self.counter = 4
           self.startCounter();
           setTimeout(() => {
-            //window.location.href = resp.authUrl
+            window.location.href = resp.authUrl
           }, 4000)
         })
       }
