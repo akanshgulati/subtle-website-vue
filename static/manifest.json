@@ -1,6 +1,6 @@
 {
-  "name": "vue-subtle",
-  "short_name": "vue-subtle",
+  "name": "Subtle Tab",
+  "short_name": "Subtle Tab",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
