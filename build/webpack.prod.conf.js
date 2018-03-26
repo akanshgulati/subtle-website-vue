@@ -36,15 +36,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      sourceMap: true
-    }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash].min.css')
+      filename: utils.assetsPath('css/[name].[contenthash].min.css'),
+      allChunks: true
     }),
     new PurifyCSSPlugin({
       // Give paths to parse for rules. These should be absolute!
@@ -60,6 +55,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       cssProcessorOptions: {
         safe: true
       }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      sourceMap: true
     }),
     // generate html index.html with correct asset hash for caching.
     // you can customize output by editing /index.html

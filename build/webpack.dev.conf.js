@@ -6,6 +6,7 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
@@ -24,6 +25,10 @@ module.exports = merge(baseWebpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env
+    }),
+    new ExtractTextPlugin({
+      filename: utils.assetsPath('css/[name].[contenthash].min.css'),
+      allChunks: true
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
