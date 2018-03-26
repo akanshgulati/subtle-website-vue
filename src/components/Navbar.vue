@@ -5,7 +5,7 @@
         <span class="font-normal">Subtle tab</span>
       </router-link>
       <ul id="nav-mobile"
-          class="right hide-on-med-and-down flex flex-center"
+          class="right hide-on-med-and-down"
           v-if="showButtons && showButtons.indexOf(currentRoute) > -1">
         <li class="flex flex-center">
           <a class="nav-button" href="https://goo.gl/LXE9fK">
@@ -40,7 +40,7 @@
     }
   }
 </script>
-<style scoped>
+<style>
   nav {
     background: rgb(255, 255, 255);
     color: #666 !important;

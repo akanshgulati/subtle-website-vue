@@ -10,10 +10,12 @@ export default {
 }
 </script>
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20%27%60');
   @import 'assets/css/materialize.css';
+  @import 'assets/css/flexboxgrid.min.css';
 
   * {
-    font-family: "Helvetica Neue", sans-serif;;
+    font-family: "Open Sans", sans-serif;;
     font-weight: 400;
     font-style: normal;
     color: #666;

@@ -158,7 +158,7 @@
     }
   }
 </script>
-<style scoped>
+<style>
   #uninstall {
     background: linear-gradient(to bottom, #41C2B7 300px, #464646 300px);
     min-height: calc(100vh - 64px);

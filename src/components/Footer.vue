@@ -1,9 +1,9 @@
 <template>
-  <footer
+  <footer id="footer"
     class="footer-container flex flex-justify-space-between font-small"
     v-if="!hideOn || hideOn.indexOf(currentRoute) === -1">
     <div>
-      <p class="footer-copyright">@2018 Subtle Tab. All rights reserved.</p>
+      <p class="footer-copyright">&copy;2018 Subtle Tab. All rights reserved.</p>
       <p class="footer-links">
         <a href="mailto: contact@subtletab.com" class="pr-5">Contact Us</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj1M9SYtPXzqM1C0KN8DlJio6vGSfZnOWWUVDXArMMSo-GNA/viewform"
@@ -64,7 +64,7 @@
     }
   }
 </script>
-<style scoped>
+<style>
   footer {
     background-color: rgb(51, 51, 51);
     border-top: 1px solid #ccc;
@@ -91,7 +91,7 @@
     fill: #ffffff
   }
 
-  p {
+  #footer p {
     margin: 0;
     color: #a9a9a9;
   }
