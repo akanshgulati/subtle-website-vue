@@ -1,5 +1,5 @@
 <template>
-  <button class="plugin-button flex flex-center" @click="install">
+  <button class="plugin-button flex flex-center" @click="install" v-if="isChrome || isFirefox">
     <span class="chrome-plugin-button flex flex-center" v-if="isChrome">
       <img src="../assets/images/chrome-store-icon.png" alt="chrome icon"
            class="icon--plugin">
@@ -19,7 +19,7 @@
         return window.navigator.userAgent.indexOf('Chrome') > -1
       },
       isFirefox() {
-        return window.navigator.userAgent.indexOf('firefox') > -1
+        return window.navigator.userAgent.indexOf('Firefox') > -1
       }
     },
     methods: {
