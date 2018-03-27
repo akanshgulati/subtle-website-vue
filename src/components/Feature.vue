@@ -12,7 +12,7 @@
     <template v-else>
       <div class="feature-desc col s12 l6">
         <h3 class="light">{{heading}}</h3>
-        <p class="show-on-large">{{ desc }}</p>
+        <p class="show-on-large hide-on-med-and-down">{{ desc }}</p>
       </div>
       <div class="feature-img col s12 l6 right-align">
         <img :src="featureImg" alt="">
