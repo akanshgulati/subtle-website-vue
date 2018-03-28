@@ -2,10 +2,10 @@
   <div id="home">
     <HeroSection class="pv-30"/>
     <section id="intro" class="pv-30 mt-30">
-      <h2>Bye Bye boring tabs, hello Subtle Tab!</h2>
-      <p class="center font-large">
-        Subtle tab, a new tab utility gives rejoicing experience to relieve stress
-        with inspirational wallpapers, keeps you updated about time and weather and lets you create notes.
+      <h2 class="light font-black">Bye Bye boring tabs, hello Subtle Tab!</h2>
+      <p class="center font-xlarge light" style="max-width: 800px">
+        Subtle tab, a new tab utility,
+        gives rejoicing experience to relieve stress, increases focus and productivity.
       </p>
     </section>
     <FeatureWrapper class="pv-20"/>

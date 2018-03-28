@@ -5,31 +5,31 @@
         <svg viewBox="0 0 21 21">
           <use xlink:href="#icon-wallpaper"></use>
         </svg>
-        <p>Wallpapers</p>
+        <p class="font-black">Wallpapers</p>
       </li>
       <li @click="scrollTo('notes')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'notes'}">
         <svg viewBox="0 0 58.27 58.27" class="fill">
           <use xlink:href="#icon-notes"></use>
         </svg>
-        <p>Notes</p>
+        <p class="font-black">Notes</p>
       </li>
       <li @click="scrollTo('weather')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'weather'}">
         <svg viewBox="0 0 21 21">
           <use xlink:href="#icon-weather"></use>
         </svg>
-        <p>Weather</p>
+        <p class="font-black">Weather</p>
       </li>
       <li @click="scrollTo('dateTime')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'dateTime'}">
         <svg viewBox="0 0 21 21">
           <use xlink:href="#icon-clock"></use>
         </svg>
-        <p>Day & Time</p>
+        <p class="font-black">Date & Time</p>
       </li>
       <li @click="scrollTo('customize')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'customize'}">
         <svg viewBox="0 0 100 100" class="fill">
           <use xlink:href="#icon-customize"></use>
         </svg>
-        <p>Customize</p>
+        <p class="font-black">Customize</p>
       </li>
     </ul>
     <svg style="display: none;">
@@ -88,6 +88,7 @@
     },
     methods: {
       scrollTo(element) {
+        this.$ga.event('website', 'FeatureNavbar', 'clicked-'+ element);
         const featureBarHeight = document.querySelector('#feature-navbar').offsetHeight;
         const offsetTop = document.querySelector('#'+element).offsetTop - featureBarHeight;
         window.scroll({
@@ -130,11 +131,11 @@
     height: 2rem;
     width: 2rem;
     fill: none;
-    stroke: #666;
+    stroke: #333;
     transition: all 0.2s ease-in;
   }
   svg.fill {
-    fill: #666;
+    fill: #333;
     stroke: none;
   }
   ul li{

@@ -1,16 +1,18 @@
 <template>
-  <button class="plugin-button flex flex-center" @click="install" v-if="isChrome || isFirefox">
-    <span class="chrome-plugin-button flex flex-center" v-if="isChrome">
-      <img src="../assets/images/chrome-store-icon.png" alt="chrome icon"
-           class="icon--plugin">
-      Add to Chrome
-    </span>
-    <span class="firefox-plugin-button flex flex-center" v-if="isFirefox">
+  <div class="plugin-button inline-flex flex-center pointer" @click="install" v-if="isChrome || isFirefox">
+      <template v-if="isChrome" class="white">
+        <img src="../assets/images/chrome-store-icon.png" alt="chrome icon"
+             class="icon--plugin">
+        <span class="mr-5 white-text">Add to Chrome</span>
+        <span class="free-text">It's free</span>
+      </template>
+    <template v-else-if="isFirefox">
       <img src="../assets/images/firefox-store-icon.png" alt="firefox icon"
            class="icon--plugin">
-      Add to Firefox
-    </span>
-  </button>
+      <span class="mr-5 white-text">Add to Firefox</span>
+      <span class="free-text">It's free</span>
+    </template>
+  </div>
 </template>
 <script>
   export default {
@@ -24,8 +26,15 @@
     },
     methods: {
       install() {
+        this.$ga.event('website', 'addToButton', 'clicked')
         if (this.isChrome && window.chrome.webstore) {
-          window.chrome.webstore.install()
+          window.chrome.webstore.install(
+            'https://chrome.google.com/webstore/detail/ngigalmiikbffkcabedaikboeodibhga',
+            () => {
+              this.$ga.event('website', 'addToButton', 'install-success')
+            }, () => {
+              this.$ga.event('website', 'addToButton', 'install-failed')
+            })
         } else if (this.isFirefox) {
           window.location.href = 'https://addons.mozilla.org/en-US/firefox/addon/subtletab'
         } else {
@@ -45,12 +54,12 @@
   .plugin-button {
     background-color: #3199e6;
     border: none;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
     border-radius: 50px;
     font-size: 1.2rem;
     box-shadow: none;
     margin: 0 auto;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-in;
   }
 
   .plugin-button:hover {
@@ -58,14 +67,12 @@
     background-color: #2591E4;
   }
 
-  .plugin-button span {
-    display: none;
-    color: white;
-  }
-
   .icon--plugin {
     width: 32px;
     height: 32px;
     margin-right: 0.5rem;
+  }
+  .free-text {
+    color: rgba(6, 29, 47, 0.5)
   }
 </style>

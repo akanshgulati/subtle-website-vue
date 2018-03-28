@@ -4,14 +4,14 @@
       <div class="feature-img col s12 l6">
         <img :src="featureImg" alt="">
       </div>
-      <div class="feature-desc col s12 l6">
-        <h3 class="light">{{heading}}</h3>
+      <div class="feature-desc  col s12 l6">
+        <h3 class="light font-black">{{heading}}</h3>
         <p>{{ desc }}</p>
       </div>
     </template>
     <template v-else>
       <div class="feature-desc col s12 l6">
-        <h3 class="light">{{heading}}</h3>
+        <h3 class="light font-black">{{heading}}</h3>
         <p class="show-on-large hide-on-med-and-down">{{ desc }}</p>
       </div>
       <div class="feature-img col s12 l6 right-align">

@@ -2,7 +2,7 @@
     <nav class="nav-wrapper ph-30" :class="{sticky: sticky}">
       <router-link to='/' class="brand-logo flex flex-center">
         <img src="../assets/images/subtletab.png" alt="Logo" class="brand-logo-img">
-        <span class="font-normal">Subtle tab</span>
+        <strong class="bold">Subtle Tab</strong>
       </router-link>
       <ul id="nav-mobile"
           class="right hide-on-med-and-down"
@@ -10,13 +10,13 @@
         <li class="flex flex-center">
           <a class="nav-button" href="https://goo.gl/LXE9fK">
             <span class="font-xsmall">Download for</span><br/>
-            <span>Chrome</span>
+            <span class="font-black">Chrome</span>
           </a>
         </li>
         <li class="flex flex-center">
           <a class="nav-button border-left" href="https://goo.gl/SiGMxu">
             <span class="font-xsmall">Download for</span><br/>
-            <span>Firefox</span>
+            <span class="font-black">Firefox</span>
           </a>
         </li>
       </ul>
@@ -53,8 +53,8 @@
   }
 
   nav .brand-logo {
-    color: #000 !important;
-    font-size: 1.5rem;
+    color: #333 !important;
+    font-size: 1.2rem;
   }
 
   nav .brand-logo-img {
@@ -80,7 +80,7 @@
   }
 
   .border-left {
-    border-left: 1px solid rgb(204, 204, 204);
+    border-left: 1px solid rgb(236, 236, 236);
   }
 
   #nav-mobile li {
