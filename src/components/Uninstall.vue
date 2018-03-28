@@ -114,7 +114,7 @@
       },
       sendEvent(string) {
         if (this.$ga) {
-          this.$ga.event('clicked', 'uninstall', string)
+          this.$ga.event('website', 'uninstall', string)
         }
       },
       send(string) {
@@ -245,7 +245,7 @@
     margin-top: -5px;
     top: 0;
     font-size: 75%;
-    color: #b3b3b3;
+    color: rgb(140, 139, 139);
   }
 
   .answer, .answer li {

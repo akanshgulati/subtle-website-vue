@@ -8,13 +8,13 @@
           class="right hide-on-med-and-down"
           v-if="showButtons && showButtons.indexOf(currentRoute) > -1">
         <li class="flex flex-center">
-          <a class="nav-button" href="https://goo.gl/LXE9fK">
+          <a class="nav-button" href="https://goo.gl/LXE9fK" @click="downloadClicked">
             <span class="font-xsmall">Download for</span><br/>
             <span class="font-black">Chrome</span>
           </a>
         </li>
         <li class="flex flex-center">
-          <a class="nav-button border-left" href="https://goo.gl/SiGMxu">
+          <a class="nav-button border-left" href="https://goo.gl/SiGMxu" @click="downloadClicked">
             <span class="font-xsmall">Download for</span><br/>
             <span class="font-black">Firefox</span>
           </a>
@@ -36,6 +36,11 @@
     computed: {
       currentRoute(){
         return this.$route.name;
+      }
+    },
+    methods: {
+      downloadClicked() {
+        this.$ga.event('website', 'downloadBtn', 'clicked')
       }
     }
   }
