@@ -4,6 +4,8 @@ export const Http = (url, option = {}) => {
     const method = option.method || 'GET'
     xmlhttp.open(method, url)
 
+    xmlhttp.withCredentials = !!option.withCredentials;
+
     if (option.headers) {
       for (let i = 0; i < option.headers.length; i++) {
         xmlhttp.setRequestHeader(option.headers[i].name, option.headers[i].value)
