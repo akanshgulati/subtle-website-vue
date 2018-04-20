@@ -10,11 +10,13 @@ export default new Router({
       name: 'website',
       path: '/',
       component: () => import(/* webpackChunkName: "website" */ '@/components/WebsiteWrapper.vue'),
-      children: [{
+      children: [
+        {
           name: 'home',
           path: '',
           component: () => import(/* webpackChunkName: "home" */ '@/components/Home.vue')
-        }, {
+        },
+        {
           name: 'integrations',
           path: 'integrations',
           redirect: '/integrations/calendar',
@@ -23,6 +25,17 @@ export default new Router({
             name: 'integrations.calendar',
             path: 'calendar',
             component: () => import(/* webpackChunkName: "integrations.calendar" */ '@/components/IntegrationCalendar.vue')
+          }]
+        },
+        {
+          name: 'kb',
+          path: 'kb',
+          redirect: '/kb/integrations/calendar',
+          component: {render (c) { return c('router-view') }},
+          children: [{
+            name: 'kb.calendar',
+            path: 'integrations/calendar',
+            component: () => import(/* webpackChunkName: "kb.integrations.calendar" */ '@/components/kb/Calendar.vue')
           }]
         },
         {

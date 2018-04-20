@@ -1,21 +1,31 @@
 <template>
   <section class='flex flex-flow-column integration-section flex-center'>
-    <div class="flex flex-center flex-justify-center pv-30">
+    <div
+      class="flex flex-center flex-justify-center pv-30">
       <img src="../assets/images/google-calendar-logo.png" alt="Calendar Logo">
       <h3 class="ph-10 mar-0">Google Calendar Integration</h3>
     </div>
-      <template v-if="!code">
-        <div class="pv-10 center">
-          <img src="../assets/images/loading.gif" alt=""
-               width="100px">
-          <p v-if="!isLoading">
-            You will be redirected to <strong>Google Calendar</strong> page
-            to authorize <strong>Subtletab</strong> to access your
-            calendar data.
-          </p>
-          <h4 v-if="!isLoading" v-show="counter">Redirect in {{counter}}...</h4>
-        </div>
-      </template>
+    <template v-if="isLoading">
+      <img src="../assets/images/loading.gif" alt="loading gif"
+           width="100px">
+      <span>Please Wait...</span>
+    </template>
+    <template v-else>
+      <div
+        v-if="!code"
+        class="pv-10 flex-center flex flex-flow-column">
+        <img src="/static/img/integrations/integrate_google_calendar.png"
+             alt="Google Integration with Subtle tab" width="213px" class="pv-30">
+        <button
+          @click="startAuthentication()"
+          v-if="authUrl"
+          class="btn btn-large mt-30 btn-blue btn-rounded">
+          Start Integration
+        </button>
+        <p>Want to learn how to integrate?
+          <router-link :to="{name: 'kb.calendar'}">Click Here!</router-link>
+        </p>
+      </div>
       <template v-else>
         <div class="pv-20 center">
           <img src="../assets/images/success.png" alt="" width="100px">
@@ -34,6 +44,7 @@
       </span>
         </div>
       </template>
+    </template>
   </section>
 </template>
 <script>
@@ -45,7 +56,8 @@
         copyButtonTxt: 'Copy',
         counter: 0,
         code: '',
-        isLoading: true
+        isLoading: true,
+        authUrl: ''
       }
     },
     methods: {
@@ -59,17 +71,16 @@
         const self = this
 
         Http(url, {withCredentials: true}).then(resp => {
-          self.isLoading = false;
+          self.isLoading = false
           if (resp.authUrl) {
-            self.counter = 4
-            self.startCounter()
-            setTimeout(() => {
-              window.location.href = resp.authUrl
-            }, 4000)
+            self.authUrl = resp.authUrl
           } else {
             self.code = resp.code
           }
         })
+      },
+      startAuthentication() {
+        window.location.href = this.authUrl
       },
       startCounter() {
         const self = this
@@ -83,7 +94,7 @@
         this.copyButtonTxt = 'Copied'
       }
     },
-    mounted() {
+    created() {
       this.get()
     }
   }

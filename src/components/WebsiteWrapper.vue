@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar sticky="true" :show-buttons="['home']"/>
+    <Navbar sticky="true" :show-buttons="['home', 'kb.calendar']"/>
     <router-view></router-view>
     <Footer :hide-on="['uninstall']"/>
   </div>

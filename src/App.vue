@@ -10,7 +10,7 @@ export default {
 }
 </script>
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20%27%60');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz%20%27%60%2A%2C%40%26');
   @import 'assets/css/materialize.css';
   @import 'assets/css/flexboxgrid.min.css';
 

@@ -165,3 +165,14 @@ h4 {
 .pointer {
   cursor: pointer;
 }
+.btn-blue {
+  background-color: #518df8;
+  color: white;
+}
+.btn-blue:hover {
+  background-color: #4c77f8;
+  color: white;
+}
+.btn-rounded {
+  border-radius: 50px;
+}
