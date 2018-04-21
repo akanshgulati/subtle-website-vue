@@ -35,7 +35,7 @@ export default new Router({
           children: [{
             name: 'kb.calendar',
             path: 'integrations/calendar',
-            component: () => import(/* webpackChunkName: "kb.integrations.calendar" */ '@/components/kb/Calendar.vue')
+            component: () => import(/* webpackChunkName: "kb.integrations.calendar" */ '@/components/kb/KbCalendar.vue')
           }]
         },
         {

@@ -14,7 +14,7 @@
 </script>
 <style scoped>
   header {
-    background: url('/static/img/kb/green_gradient_bg.png') center no-repeat;
+    background: url('/static/img/kb/kb_header_bg.png') center no-repeat;
     background-size: cover;
   }
   h1 {

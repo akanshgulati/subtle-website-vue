@@ -7,42 +7,40 @@
       </section>
       <section class="steps">
         <ol>
-          <li>Open the Calendar widget by clicking on clock widget. Click on
+          <!--<li>Open the Calendar widget by clicking on clock widget. Click on
             <strong>Integrate</strong>
             button shown in Calendar widget as below.
-            <img src="/static/img/kb/step1.png" alt="">
+            <img src="/static/img/kb/g_integration_subtle_extension.png" alt="">
+          </li>-->
+          <li>
+            Open this <router-link :to="{name: 'integrations.calendar'}" target="_blank">link</router-link> to start integration. Click on <strong>Start Integration</strong> button.
+            <img src="/static/img/kb/g_integration_webhome.png" alt="">
           </li>
-          <li>(Customize widget will open) Click on <strong>Click here</strong>
-            shown in description to start the process.
-            <img src="/static/img/kb/step2.png" alt="">
-          </li>
-          <li>(Google Sign In page will open) Choose your account whose calendar
+          <li><em>(Google Sign In page will open)</em> Choose your account whose calendar
             events you want to sync in Subtle tab.
-            <img src="/static/img/kb/step3.png" alt="">
+            <img src="/static/img/kb/g_integration_account.png" alt="">
           </li>
           <li>
             Enter your password if Google asks for or skip to next step.
-            <img src="/static/img/kb/step4.png" alt="">
+            <img src="/static/img/kb/g_integration_password.png" alt="">
           </li>
           <li>
             Click on <strong>Allow</strong> to give Subtle tab permission to let
             you view events on new tab.
-            <img src="/static/img/kb/step5.png" alt="">
+            <img src="/static/img/kb/g_integration_permission.png" alt="">
           </li>
           <li>
-            Once you click allow, you will be redirected to <strong>Google
+            <em>(Once you click allow, you will be redirected to <strong>Google
             Calendar
-            Integration Success</strong> window with <strong>Authentication
-            Code</strong>. Click on <strong>Copy</strong> button to copy the
+            Integration Success</strong> window with Authentication
+              Code)</em> Click on <strong>Copy</strong> button to copy the
             code.
-            <img src="/static/img/kb/step6.png" alt="">
+            <img src="/static/img/kb/g_integration_copy_code.png" alt="">
           </li>
-          <li>Go to <strong>Customize widget</strong> on previous tab and paste
-            the
-            authentication code in the box and click <strong>Save</strong>
-            button.
-            (You will see the success message in case all goes right)
-            <img src="/static/img/kb/step7.png" alt="">
+          <li>Paste
+            the authentication code in the box and click <strong>Save</strong> button.
+            <em>(You will see the success message in case all goes right)</em>
+            <img src="/static/img/kb/g_integration_paste_code.png" alt="">
           </li>
         </ol>
       </section>
