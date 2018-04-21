@@ -39,9 +39,10 @@
           </li>
           <li>Paste
             the authentication code in the box and click <strong>Save</strong> button.
-            <em>(You will see the success message in case all goes right)</em>
             <img src="/static/img/kb/g_integration_paste_code.png" alt="">
           </li>
+          <li><strong>(Only for Chrome users) Allow</strong> the additional permission in order to access calendar events <em>(You will see the success message in customize menu in case all goes right)</em></li>
+          <img src="/static/img/kb/g_integration_optional_permission.png" alt="">
         </ol>
       </section>
       <section class="article-notes">
