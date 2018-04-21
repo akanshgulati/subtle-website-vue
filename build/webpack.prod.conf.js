@@ -45,7 +45,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       // Give paths to parse for rules. These should be absolute!
       paths: glob.sync([
         path.join(__dirname, '../src/*.vue'),
-        path.join(__dirname, '../src/components/*.vue'),
+        path.join(__dirname, '../src/components/**/*.vue'),
       ]),
       verbose: true
     }),
