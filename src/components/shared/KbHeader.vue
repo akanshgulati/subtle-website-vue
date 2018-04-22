@@ -1,6 +1,8 @@
 <template>
   <header class="pv-30 ph-30">
-    <h1>{{title}}</h1>
+    <div class="container center">
+      <h1>{{title}}</h1>
+    </div>
   </header>
 </template>
 <script>
@@ -19,8 +21,10 @@
   }
   h1 {
     font-size: 2.5rem;
-    font-height: 100%;
+    font-weight: 400;
     color: white;
     padding: 3rem 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>

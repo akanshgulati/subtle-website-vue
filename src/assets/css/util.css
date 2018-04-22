@@ -115,7 +115,7 @@
 }
 
 .font-normal {
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 
 .inline-block {
