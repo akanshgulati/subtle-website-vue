@@ -89,7 +89,9 @@
 .flex-flow-column {
   flex-flow: column;
 }
-
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
 .lh-1 {
   line-height: 1
 }

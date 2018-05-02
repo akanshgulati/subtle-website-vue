@@ -1,17 +1,8 @@
 <template>
   <footer id="footer"
-    class="footer-container flex flex-justify-space-between font-small"
+    class="footer-container  flex-row-reverse font-small"
+    :class="!isMobile?'flex flex-justify-space-between': 'flex-row-reverse'"
     v-if="!hideOn || hideOn.indexOf(currentRoute) === -1">
-    <div>
-      <p class="footer-copyright">&copy;2018 Subtle Tab. All rights reserved.</p>
-      <p class="footer-links">
-        <a href="mailto: contact@subtletab.com" class="pr-5">Contact Us</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj1M9SYtPXzqM1C0KN8DlJio6vGSfZnOWWUVDXArMMSo-GNA/viewform"
-           target="_blank" class="ph-5">Feedback</a>
-        <router-link to="privacy" class="ph-5">Privacy Policy</router-link>
-      </p>
-    </div>
-
     <div class="flex flex-center">
       <p class="mar-0">Follow us on:</p>
       <ul class="ml-10">
@@ -47,6 +38,15 @@
         </li>
       </ul>
     </div>
+    <div>
+      <p class="footer-copyright">&copy;2018 Subtle Tab. All rights reserved.</p>
+      <p class="footer-links">
+        <a href="mailto: contact@subtletab.com" class="pr-5">Contact Us</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj1M9SYtPXzqM1C0KN8DlJio6vGSfZnOWWUVDXArMMSo-GNA/viewform"
+           target="_blank" class="ph-5">Feedback</a>
+        <router-link to="privacy" class="ph-5">Privacy Policy</router-link>
+      </p>
+    </div>
   </footer>
 </template>
 <script>
@@ -60,6 +60,9 @@
     computed: {
       currentRoute() {
         return this.$route.name
+      },
+      isMobile(){
+        return window.innerWidth < 450
       }
     }
   }

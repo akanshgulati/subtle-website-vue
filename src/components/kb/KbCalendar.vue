@@ -25,23 +25,23 @@
                   </router-link>
                   to start integration. Click on <strong>Start
                   Integration</strong> button.
-                  <img src="/static/img/kb/g_integration_webhome.png" alt="">
+                  <img src="/static/img/kb/g_integration_webhome.png" alt="" data-retina>
                 </li>
 
                 <li><em>(Google Sign In page will open)</em> Choose your
                   account
                   whose calendar
                   events you want to sync in Subtle tab.
-                  <img src="/static/img/kb/g_integration_account.png" alt="">
+                  <img src="/static/img/kb/g_integration_account.png" alt="" data-retina>
                 </li>
                 <li>
                   Enter your password if Google asks for or skip to next step.
-                  <img src="/static/img/kb/g_integration_password.png" alt="">
+                  <img src="/static/img/kb/g_integration_password.png" alt="" data-retina>
                 </li>
                 <li>
                   Click on <strong>Allow</strong> to give Subtle tab
                   permission to let you view events on new tab.
-                  <img src="/static/img/kb/g_integration_permission.png"
+                  <img src="/static/img/kb/g_integration_permission.png" data-retina
                        alt="">
                 </li>
                 <li>
@@ -52,14 +52,14 @@
                     Code)</em> Click on <strong>Copy</strong> button to copy
                   the
                   code.
-                  <img src="/static/img/kb/g_integration_copy_code.png"
+                  <img src="/static/img/kb/g_integration_copy_code.png" data-retina
                        alt="">
                 </li>
 
                 <li>Paste
                   the authentication code in the box and click
                   <strong>Save</strong> button.
-                  <img src="/static/img/kb/g_integration_paste_code.png"
+                  <img src="/static/img/kb/g_integration_paste_code.png" data-retina
                        alt="">
                 </li>
                 <li>
@@ -116,6 +116,16 @@
     components: {
       KbHeader,
       Youtube
+    },
+    mounted() {
+      if (window.devicePixelRatio > 1) {
+        let imgs = document.querySelectorAll('img[data-retina]')
+        imgs.forEach(img => {
+          let dotLocation = img.src.lastIndexOf('.')
+          img.src = (img.src.substring(0, dotLocation) + '-2x') +
+            img.src.substring(dotLocation, img.src.length)
+        })
+      }
     }
   }
 </script>

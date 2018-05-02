@@ -4,13 +4,13 @@
         <img src="../assets/images/chrome-store-icon.png" alt="chrome icon"
              class="icon--plugin">
         <span class="mr-5 white-text">Add to Chrome</span>
-        <span class="free-text">It's free</span>
+        <span class="free-text bold">It's free</span>
       </template>
     <template v-else-if="isFirefox">
       <img src="../assets/images/firefox-store-icon.png" alt="firefox icon"
            class="icon--plugin">
       <span class="mr-5 white-text">Add to Firefox</span>
-      <span class="free-text">It's free</span>
+      <span class="free-text bold">It's free</span>
     </template>
   </div>
 </template>

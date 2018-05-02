@@ -8,13 +8,15 @@
           class="right hide-on-med-and-down"
           v-if="showButtons && showButtons.indexOf(currentRoute) > -1">
         <li class="flex flex-center">
-          <a class="nav-button" href="https://goo.gl/LXE9fK" @click="downloadClicked">
+          <a class="nav-button" href="https://goo.gl/LXE9fK"
+             @click="downloadClicked" :class="{'highlight': highlightDownloadBtn}">
             <span class="font-xsmall">Download for</span><br/>
             <span class="font-black">Chrome</span>
           </a>
         </li>
         <li class="flex flex-center">
-          <a class="nav-button border-left" href="https://goo.gl/SiGMxu" @click="downloadClicked">
+          <a class="nav-button border-left" href="https://goo.gl/SiGMxu"
+             @click="downloadClicked" :class="{'highlight': highlightDownloadBtn}">
             <span class="font-xsmall">Download for</span><br/>
             <span class="font-black">Firefox</span>
           </a>
@@ -23,7 +25,13 @@
     </nav>
 </template>
 <script>
+  let scrollListener;
   export default {
+    data(){
+      return {
+        highlightDownloadBtn: false
+      }
+    },
     props: {
       sticky: {
         type: String,
@@ -32,6 +40,12 @@
       showButtons: {
         type: Array
       }
+    },
+    mounted() {
+      const self = this;
+      scrollListener = window.addEventListener('scroll', () => {
+        self.highlightDownloadBtn = window.scrollY > window.innerHeight
+      })
     },
     computed: {
       currentRoute(){
@@ -42,6 +56,9 @@
       downloadClicked() {
         this.$ga.event('website', 'downloadBtn', 'clicked')
       }
+    },
+    destroyed(){
+      window.removeEventListener(scrollListener, true)
     }
   }
 </script>
@@ -95,5 +112,9 @@
     position: sticky;
     top: 0;
     z-index: 2;
+  }
+  .highlight span {
+    transition: all 0.3s ease-in;
+    color: rgb(49, 153, 230);
   }
 </style>
