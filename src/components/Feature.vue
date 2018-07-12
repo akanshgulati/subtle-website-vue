@@ -2,22 +2,22 @@
   <section class="feature-section row flex-center">
     <template v-if="contentRight && isDesktop">
       <div class="feature-img col s12 l6">
-        <img :src="featureImg" alt="">
+        <img :src="featureImg" :alt="imgAlt">
       </div>
       <div class="feature-desc  col s12 l6">
         <h3 class="light font-black">{{heading}}</h3>
-        <p>{{ desc }}</p>
+        <p v-html="desc"/>
       </div>
     </template>
     <template v-else>
       <div class="feature-desc col s12 l6">
         <h3 class="light font-black">{{heading}}</h3>
-        <p class="show-on-large hide-on-med-and-down">{{ desc }}</p>
+        <p class="show-on-large hide-on-med-and-down" v-html="desc"></p>
       </div>
       <div class="feature-img col s12 l6 right-align">
-        <img :src="featureImg" alt="">
+        <img :src="featureImg" :alt="imgAlt">
       </div>
-      <p class="hide-on-large-only">{{ desc }}</p>
+      <p class="hide-on-large-only" v-html="desc"></p>
     </template>
   </section>
 </template>
@@ -32,6 +32,10 @@
       },
       img: {
         required: true
+      },
+      imgAlt: {
+        default: true,
+        type: String
       },
       contentRight: {
         default: true

@@ -9,6 +9,7 @@
       :heading="feature.heading"
       :img="feature.img"
       :id="feature.id"
+      :imgAlt="feature.imgAlt"
       :contentRight="isEven($index)"
     />
   </div>
