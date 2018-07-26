@@ -25,6 +25,10 @@ export default new Router({
             name: 'integrations.calendar',
             path: 'calendar',
             component: () => import(/* webpackChunkName: "integrations.calendar" */ '@/components/IntegrationCalendar.vue')
+          },{
+            name: 'integrations.wunderlist',
+            path: 'wunderlist',
+            component: () => import(/* webpackChunkName: "integrations.wunderlist" */ '@/components/IntegrationWunderlist.vue')
           }]
         },
         {
