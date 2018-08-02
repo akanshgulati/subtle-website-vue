@@ -29,7 +29,12 @@ export default new Router({
             name: 'integrations.wunderlist',
             path: 'wunderlist',
             component: () => import(/* webpackChunkName: "integrations.wunderlist" */ '@/components/IntegrationWunderlist.vue')
-          }]
+          },
+            {
+              name: 'integrations.todoist',
+              path: 'todoist',
+              component: () => import(/* webpackChunkName: "integrations.wunderlist" */ '@/components/IntegrationTodoist.vue')
+            }]
         },
         {
           name: 'kb',
