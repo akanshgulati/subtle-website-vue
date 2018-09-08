@@ -13,7 +13,7 @@
       <div
         v-if="!code"
         class="pv-10 flex-center flex flex-flow-column">
-        <img src="/static/img/integrations/integrate_google_calendar.png"
+        <img src="/static/img/integrations/integrate_wunderlist.png"
              alt="Google Integration with Subtle tab" width="213px" class="pv-30">
         <button
           @click="startAuthentication()"
@@ -21,9 +21,6 @@
           class="btn btn-large mt-30 btn-blue btn-rounded">
           Start Integration
         </button>
-        <p>Want to learn how to integrate?
-          <router-link :to="{name: 'kb.calendar'}">Click Here!</router-link>
-        </p>
       </div>
       <template v-else>
         <div class="pv-20 center">
