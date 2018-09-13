@@ -20,7 +20,7 @@ export const weather = {
   imgAlt: 'weather forecast and current temperature'
 };
 export const dateTime = {
-  desc: `Keep track of time to make most out of your day and remain updated with upcoming events from Google Calendar. <br><a href="#/kb/integrations/calendar" class="btn-block mt-10">Integrate Google Calendar > </a>`,
+  desc: `Keep track of time to make most out of your day and remain updated with upcoming events from Google Calendar. <br><a href="kb/integrations/calendar" class="btn-block mt-10">Integrate Google Calendar > </a>`,
   heading: 'Date & Time Widget',
   img: 'day-time.jpg',
   id: 'dateTime',
