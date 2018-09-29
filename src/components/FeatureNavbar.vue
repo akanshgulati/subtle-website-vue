@@ -7,6 +7,12 @@
         </svg>
         <p class="font-black">Wallpapers</p>
       </li>
+      <li @click="scrollTo('todos')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'todos'}">
+        <svg viewBox="0 0 512 512" class="fill">
+          <use xlink:href="#icon-todos"></use>
+        </svg>
+        <p class="font-black">Todos</p>
+      </li>
       <li @click="scrollTo('notes')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'notes'}">
         <svg viewBox="0 0 58.27 58.27" class="fill">
           <use xlink:href="#icon-notes"></use>
@@ -74,6 +80,16 @@
             d="M26.845,29.709c0.18-0.189,0.29-0.45,0.29-0.71s-0.11-0.52-0.29-0.71c-0.38-0.37-1.05-0.37-1.42,0   c-0.18,0.19-0.29,0.45-0.29,0.71c0,0.271,0.11,0.521,0.29,0.71c0.19,0.181,0.45,0.29,0.71,0.29   C26.395,29.999,26.656,29.89,26.845,29.709z"/>
           <path
             d="M26.135,56h-23V8h7v2c0,0.553,0.448,1,1,1h23c0.552,0,1-0.447,1-1V8h7v22c0,0.553,0.448,1,1,1s1-0.447,1-1V7   c0-0.553-0.448-1-1-1h-8V4c0-0.553-0.448-1-1-1h-6V1c0-0.553-0.448-1-1-1h-9c-0.552,0-1,0.447-1,1v2h-6c-0.552,0-1,0.447-1,1v2h-8   c-0.552,0-1,0.447-1,1v50c0,0.553,0.448,1,1,1h24c0.552,0,1-0.447,1-1S26.688,56,26.135,56z M19.135,2h7v2v2h-7V4V2z M12.135,5h5v2   c0,0.553,0.448,1,1,1h9c0.552,0,1-0.447,1-1V5h5v2v2h-21V7V5z"/>
+        </g>
+        <g id="icon-todos">
+          <path
+            d="M370,95.4V53.9h-62.2V12.5H204.2v41.5H142v41.5H69.5v404.1h373.1V95.4H370z M224.9,33.2h62.2v20.7h-62.2V33.2z M162.7,74.7h186.5v62.2H162.7V74.7z M421.8,478.8H90.2V116.1H142v41.4h228v-41.4h51.8V478.8z"/>
+          <rect width="20.7" x="131.6" y="222.8" height="20.7"/>
+          <rect width="20.7" x="131.6" y="307.8" height="20.7"/>
+          <rect width="20.7" x="131.6" y="393.8" height="20.7"/>
+          <rect width="207.3" x="173.1" y="222.8" height="20.7"/>
+          <rect width="207.3" x="173.1" y="307.8" height="20.7"/>
+          <rect width="207.3" x="173.1" y="393.8" height="20.7"/>
         </g>
       </defs>
     </svg>

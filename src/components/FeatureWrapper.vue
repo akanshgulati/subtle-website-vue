@@ -10,7 +10,7 @@
       :img="feature.img"
       :id="feature.id"
       :imgAlt="feature.imgAlt"
-      :contentRight="isEven($index)"
+      :contentRight="isOdd($index)"
     />
   </div>
 </template>
@@ -26,8 +26,8 @@
       }
     },
     methods: {
-      isEven(num) {
-        return num % 2 === 0
+      isOdd(num) {
+        return num % 2 !== 0;
       }
     },
     components: {

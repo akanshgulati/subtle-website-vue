@@ -5,6 +5,15 @@ export const wallpapers = {
   id: 'wallpaper',
   imgAlt: 'wallpapers in subtle tab'
 };
+export const todos = {
+  desc: 'Worried about various tasks? Create to-dos to keep track of your items easily. It comes with Todoist and Wunderlist integrations.' +
+    '<br><a href="https://youtu.be/XCTXKmQokCc" target="_blank" class="btn-block mt-10">Integrate Todoist > </a>' +
+    '<a href="https://youtu.be/r6JKu77Ildc" target="_blank" class="btn-block mt-10">Integrate Wunderlist > </a>',
+  heading: 'Todos Widget',
+  img: 'todo.jpg',
+  id: 'todos',
+  imgAlt: 'todos to manage daily tasks'
+};
 export const notes = {
   desc: 'Got some ideas running through your mind? Jot them down before you forget. It has multi-list and rich-text support.',
   heading: 'Notes Widget',
