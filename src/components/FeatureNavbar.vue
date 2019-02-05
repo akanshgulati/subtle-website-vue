@@ -1,41 +1,53 @@
 <template>
   <section id="feature-navbar">
     <ul class="flex flex-center flex-justify-center center">
-      <li @click="scrollTo('wallpaper')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'wallpaper'}">
-        <svg viewBox="0 0 21 21">
-          <use xlink:href="#icon-wallpaper"></use>
-        </svg>
-        <p class="font-black">Wallpapers</p>
+      <li :class="{active: activeTab === 'wallpaper'}">
+        <a href="#wallpaper" class="flex flex-center flex-justify-center" @click="scrollTo">
+          <svg viewBox="0 0 21 21">
+            <use xlink:href="#icon-wallpaper"></use>
+          </svg>
+          <p class="font-black">Wallpapers</p>
+        </a>
       </li>
-      <li @click="scrollTo('todos')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'todos'}">
-        <svg viewBox="0 0 512 512" class="fill">
-          <use xlink:href="#icon-todos"></use>
-        </svg>
-        <p class="font-black">Todos</p>
+      <li :class="{active: activeTab === 'todos'}">
+        <a href="#todos" class="flex flex-center flex-justify-center" @click="scrollTo">
+          <svg viewBox="0 0 512 512" class="fill">
+            <use xlink:href="#icon-todos"></use>
+          </svg>
+          <p class="font-black">Todos</p>
+        </a>
       </li>
-      <li @click="scrollTo('notes')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'notes'}">
-        <svg viewBox="0 0 58.27 58.27" class="fill">
-          <use xlink:href="#icon-notes"></use>
-        </svg>
-        <p class="font-black">Notes</p>
+      <li :class="{active: activeTab === 'notes'}">
+        <a href="#notes" class="flex flex-center flex-justify-center" @click="scrollTo">
+          <svg viewBox="0 0 58.27 58.27" class="fill">
+            <use xlink:href="#icon-notes"></use>
+          </svg>
+          <p class="font-black">Notes</p>
+        </a>
       </li>
-      <li @click="scrollTo('weather')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'weather'}">
-        <svg viewBox="0 0 21 21">
-          <use xlink:href="#icon-weather"></use>
-        </svg>
-        <p class="font-black">Weather</p>
+      <li :class="{active: activeTab === 'weather'}">
+        <a href="#weather" class="flex flex-center flex-justify-center" @click="scrollTo">
+          <svg viewBox="0 0 21 21">
+            <use xlink:href="#icon-weather"></use>
+          </svg>
+          <p class="font-black">Weather</p>
+        </a>
       </li>
-      <li @click="scrollTo('dateTime')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'dateTime'}">
-        <svg viewBox="0 0 21 21">
-          <use xlink:href="#icon-clock"></use>
-        </svg>
-        <p class="font-black">Date & Time</p>
+      <li :class="{active: activeTab === 'dateTime'}">
+        <a href="#dateTime" class="flex flex-center flex-justify-center" @click="scrollTo">
+          <svg viewBox="0 0 21 21">
+            <use xlink:href="#icon-clock"></use>
+          </svg>
+          <p class="font-black">Date & Time</p>
+        </a>
       </li>
-      <li @click="scrollTo('customize')" class="flex flex-center flex-justify-center" :class="{active: activeTab === 'customize'}">
-        <svg viewBox="0 0 100 100" class="fill">
-          <use xlink:href="#icon-customize"></use>
-        </svg>
-        <p class="font-black">Customize</p>
+      <li :class="{active: activeTab === 'customize'}">
+        <a href="#customize" class="flex flex-center flex-justify-center" @click="scrollTo">
+          <svg viewBox="0 0 100 100" class="fill">
+            <use xlink:href="#icon-customize"></use>
+          </svg>
+          <p class="font-black">Customize</p>
+        </a>
       </li>
     </ul>
     <svg style="display: none;">
@@ -103,25 +115,34 @@
       }
     },
     methods: {
-      scrollTo(element) {
-        this.$ga.event('website', 'FeatureNavbar', 'clicked-'+ element);
-        const featureBarHeight = document.querySelector('#feature-navbar').offsetHeight;
-        const offsetTop = document.querySelector('#'+element).offsetTop - featureBarHeight;
+      scrollTo(event) {
+        event.preventDefault();
+        const elementId = event.currentTarget.getAttribute('href').replace('#', '');
+        const element = document.querySelector('#' + elementId);
+        this.$ga.event('website', 'FeatureNavbar', 'clicked-'+ elementId);
         window.scroll({
           left: 0,
-          top: offsetTop,
+          top: element.offsetTop,
           behavior: 'smooth'
         });
-        this.activeTab = element;
+        setTimeout(() => {
+          element.focus();
+          if (document.activeElement !== element) {
+            element.setAttribute('tabIndex', '-1');
+            element.focus();
+            location.hash = elementId;
+          }
+        }, 1000);
+        // this.activeTab = element;
       },
       checkActiveElement() {
-        const sections = document.querySelectorAll('.feature-section')
-        const windowHalf = (window.innerHeight / 2)
+        const sections = document.querySelectorAll('.feature-section');
+        const windowHalf = (window.innerHeight / 2);
         const self = this;
         window.onscroll = () => {
           let cur_pos = window.pageYOffset + windowHalf;
           sections.forEach(function (section) {
-            let top = section.offsetTop
+            let top = section.offsetTop;
             if (cur_pos >= top) {
               self.activeTab = section.id
             }
@@ -129,7 +150,7 @@
         }
       }
     },
-    mounted(){
+    mounted() {
       this.checkActiveElement();
     }
   }
@@ -161,6 +182,9 @@
     transition: all 0.2s ease-in;
     cursor: pointer;
     max-width: 200px;
+  }
+
+  ul li a {
     padding: 1rem 0 0.5rem;
   }
 

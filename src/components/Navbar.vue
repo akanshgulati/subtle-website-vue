@@ -1,9 +1,21 @@
 <template>
-    <nav class="nav-wrapper ph-30" :class="{sticky: sticky}">
+    <!--<nav class="nav-wrapper ph-30" :class="{sticky: sticky}">
       <router-link to='/' class="brand-logo flex flex-center">
         <img src="../assets/images/subtletab.png" alt="Logo" class="brand-logo-img">
         <strong class="bold">Subtle Tab</strong>
       </router-link>
+      <ul>
+        <li>
+          <a href="#">Integrations</a>
+          <ul class="list">
+            <li>Google Calendar</li>
+            <li>Todoist</li>
+            <li>Wunderlist</li></ul>
+        </li>
+        <li>
+          <router-link to="kb">Blog</router-link>
+        </li>
+      </ul>
       <ul id="nav-mobile"
           class="right hide-on-med-and-down"
           v-if="showButtons && showButtons.indexOf(currentRoute) > -1">
@@ -22,10 +34,76 @@
           </a>
         </li>
       </ul>
-    </nav>
+    </nav>-->
+  <nav class="navbar" role="navigation" aria-label="main navigation" :class="{sticky: sticky}">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="../assets/images/subtletab.png" class="brand-logo-img">
+        <strong class="bold">Subtle Tab</strong>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+
+        <a class="navbar-item">
+          Documentation
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              About
+            </a>
+            <a class="navbar-item">
+              Jobs
+            </a>
+            <a class="navbar-item">
+              Contact
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="nav-button" href="https://goo.gl/LXE9fK"
+               @click="downloadClicked" :class="{'highlight': highlightDownloadBtn}">
+              <span class="font-xsmall">Download for</span><br/>
+              <span class="font-black">Chrome</span>
+            </a>
+            <a class="nav-button" href="https://goo.gl/SiGMxu"
+               @click="downloadClicked" :class="{'highlight': highlightDownloadBtn}">
+              <span class="font-xsmall">Download for</span><br/>
+              <span class="font-black">Firefox</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 <script>
   let scrollListener;
+
   export default {
     data(){
       return {
@@ -80,7 +158,6 @@
   }
 
   nav .brand-logo-img {
-    width: 40px;
     margin-right: 0.5rem;
   }
 

@@ -64,4 +64,7 @@
   .feature-desc h3 {
     font-size: 2.25rem;
   }
+  section.feature-section {
+    outline: 0;
+  }
 </style>

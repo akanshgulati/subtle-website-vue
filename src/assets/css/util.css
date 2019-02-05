@@ -181,3 +181,6 @@ h4 {
 .btn-rounded {
   border-radius: 50px;
 }
+.full-width {
+  width: 100%;
+}

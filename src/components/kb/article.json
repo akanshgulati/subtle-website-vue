@@ -1,0 +1,35 @@
+{
+  "calendar": {
+    "label": "How to",
+    "description": "Google calendar integration lets user access daily calendar on every new-tab. It\n            not only makes it easy to access calendar events but also helps in reminding user about the upcoming events",
+    "title": "How to integrate Google Calendar",
+    "image": {
+      "url": "https://blog.ghost.org/content/images/2019/01/ghost-headless-feature-image.png",
+      "alt": "Integrated google inside subtle tab screenshot"
+    },
+    "href": "/kb/integrations/calendar",
+    "createTime": 1547382469717
+  },
+  "recent-wallpapers": {
+    "label": "How to",
+    "description": "Google calendar integration lets user access daily calendar on every new-tab. It\n            not only makes it easy to access calendar events but also helps in reminding user about the upcoming events",
+    "title": "How to integrate Google Calendar",
+    "image": {
+      "url": "https://blog.ghost.org/content/images/2019/01/ghost-headless-feature-image.png",
+      "alt": "Integrated google inside subtle tab screenshot"
+    },
+    "href": "/kb/integrations/calendar",
+    "createTime": 1547382469717
+  },
+  "weather-forecast": {
+    "label": "Feature",
+    "description": "Google calendar integration lets user access daily calendar on every new-tab. It\n            not only makes it easy to access calendar events but also helps in reminding user about the upcoming events",
+    "title": "How to integrate Google Calendar",
+    "image": {
+      "url": "https://blog.ghost.org/content/images/2019/01/ghost-headless-feature-image.png",
+      "alt": "Integrated google inside subtle tab screenshot"
+    },
+    "href": "/kb/integrations/calendar",
+    "createTime": 1547382469717
+  }
+}

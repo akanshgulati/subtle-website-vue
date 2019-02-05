@@ -6,6 +6,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: 'history',
+  base: '/',
   routes: [
     {
       name: 'website',
@@ -40,12 +41,19 @@ export default new Router({
         {
           name: 'kb',
           path: 'kb',
-          redirect: '/kb/integrations/calendar',
-          component: {render (c) { return c('router-view') }},
+          component: () => import(/* webpackChunkName: "website" */ '@/components/KbWrapper.vue'),
           children: [{
+              name: 'kb.home',
+              path: '',
+              component: () => import(/* webpackChunkName: "website" */ '@/components/kb/KbHome.vue'),
+            },{
             name: 'kb.calendar',
             path: 'integrations/calendar',
             component: () => import(/* webpackChunkName: "kb.integrations.calendar" */ '@/components/kb/KbCalendar.vue')
+          }, {
+            name: 'kb.recent-wallpapers',
+            path: 'recent-wallpapers',
+            component: () => import(/* webpackChunkName: "kb.integrations.calendar" */ '@/components/kb/RecentWallpapers.vue')
           }]
         },
         {
