@@ -113,12 +113,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     new SWPrecacheWebpackPlugin({
       cacheId: 'vue-subtle',
       filename: 'service-worker.js',
-      staticFileGlobs: ['html/**/*.{js,html,css,jpg,png,webp}'],
+      staticFileGlobs: ['html/**/*.{js,css,jpg,png,webp}', '/'],
       minify: true,
-      stripPrefix: 'html/'
+      stripPrefix: 'html/',
+      dontCacheBustUrlsMatching: /\.\w{6}\./
     })
   ]
-})
+});
 
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
