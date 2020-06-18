@@ -39,7 +39,7 @@
       </ul>
     </div>
     <div>
-      <p class="footer-copyright">&copy;2019 Subtle Tab. All rights reserved.</p>
+      <p class="footer-copyright">&copy; {{date}} Subtle Tab. All rights reserved.</p>
       <p class="footer-links">
         <a href="mailto:contact@subtletab.com" class="pr-5">Contact Us</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj1M9SYtPXzqM1C0KN8DlJio6vGSfZnOWWUVDXArMMSo-GNA/viewform"
@@ -51,6 +51,12 @@
 </template>
 <script>
   export default {
+    data(){
+      const date = new Date();
+      return {
+        date: date.getFullYear()
+      }
+    },
     props :{
       hideOn: {
         type: Array | Boolean,
