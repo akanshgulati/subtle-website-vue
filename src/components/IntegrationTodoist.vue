@@ -41,10 +41,12 @@
         </div>
       </template>
     </template>
+    <support/>
   </section>
 </template>
 <script>
-  import {Http} from '../utils/common'
+  import {Http} from '../utils/common';
+  import Support from './support';
 
   export default {
     data() {
@@ -92,6 +94,9 @@
     },
     created() {
       this.get()
+    },
+    components: {
+      Support
     }
   }
 </script>

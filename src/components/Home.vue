@@ -10,18 +10,21 @@
     </section>
     <FeatureWrapper class="pv-20"/>
     <Feedback/>
+    <support/>
   </div>
 </template>
 <script>
   import FeatureWrapper from './FeatureWrapper'
   import HeroSection from './HeroSection'
   import Feedback from './Feedback'
+  import Support from './support'
 
   export default {
     components: {
       FeatureWrapper,
       HeroSection,
-      Feedback
+      Feedback,
+      Support
     }
   }
 </script>
